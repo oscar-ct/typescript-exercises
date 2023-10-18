@@ -18,3 +18,19 @@ function adjacentElementsProduct(inputArray: number[]): number {
 function shapeArea(n: number): number {
     return n*n + (n-1)*(n-1);
 }
+
+// Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that. Help him figure out the minimum number of additional statues needed.
+//
+//     Example
+//
+// For statues = [6, 2, 3, 8], the output should be
+// solution(statues) = 3.
+//
+// Ratiorg needs statues of sizes 4, 5 and 7.
+function makeArrayConsecutive2(statues: number[]): number {
+    const sortedStatues: number[] = statues.sort(function(a, b){return a-b});
+    const low: number = sortedStatues[0];
+    const high: number = sortedStatues[sortedStatues.length - 1];
+    return ((high - low + 1) - (sortedStatues.length));
+}
+
